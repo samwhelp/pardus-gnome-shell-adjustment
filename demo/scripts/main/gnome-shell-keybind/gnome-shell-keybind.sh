@@ -371,7 +371,7 @@ mod_gnome_shell_config_for_system_config_quick () {
 mod_gnome_shell_config_for_favorite_apps () {
 
 
-	gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'firefox-esr.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop']"
+	gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'org.gnome.TextEditor.desktop', 'firefox-esr.desktop', 'org.gnome.Console.desktop', 'org.gnome.Settings.desktop', 'tr.org.pardus.pardus-gnome-greeter.desktop']"
 
 
 	return 0
