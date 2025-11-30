@@ -204,6 +204,21 @@ mod_gnome_shell_config_for_keybind_custom () {
 	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/control-center/binding "'<Shift><Alt>s'"
 
 
+
+
+	## ### Terminal
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'kgx'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Alt>Return'"
+
+
+	## ### Terminal-1
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/name "'Terminal-1'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/command "'kgx'"
+	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/binding "'<Shift><Alt>a'"
+
+
+
 	## ### Terminal
 	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
 	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'gnome-terminal'"
@@ -217,15 +232,15 @@ mod_gnome_shell_config_for_keybind_custom () {
 
 
 	## ### Terminal
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ptyxis --new-window'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Alt>Return'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/name "'Terminal'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/command "'ptyxis --new-window'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/binding "'<Alt>Return'"
 
 
 	## ### Terminal-1
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/name "'Terminal-1'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/command "'ptyxis --new-window'"
-	dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/binding "'<Shift><Alt>a'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/name "'Terminal-1'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/command "'ptyxis --new-window'"
+	#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal-1/binding "'<Shift><Alt>a'"
 
 
 	## ### File Manager
@@ -421,6 +436,35 @@ mod_gnome_shell_config_for_hot_corner () {
 
 
 	gsettings set org.gnome.desktop.interface enable-hot-corners true
+
+
+	return 0
+}
+
+
+
+
+##
+## ## Tool / Gnome Console / Config
+##
+
+mod_tool_gnome_console_config () {
+
+	##
+	## > gsettings list-recursively | grep org.gnome.Console
+	##
+
+
+	mod_tool_gnome_console_config_for_preference
+
+
+	return 0
+}
+
+mod_tool_gnome_console_config_for_preference () {
+
+
+	gsettings set org.gnome.Console custom-font 'Monospace 14'
 
 
 	return 0
@@ -771,7 +815,9 @@ mod_gnome_shell_config () {
 
 mod_tool_config () {
 
-	mod_tool_ptyxis_config
+	mod_tool_gnome_console_config
+
+	#mod_tool_ptyxis_config
 
 	#mod_tool_gnome_terminal_config
 
