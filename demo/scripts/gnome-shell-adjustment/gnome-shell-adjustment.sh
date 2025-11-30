@@ -445,7 +445,7 @@ mod_gnome_shell_config_for_hot_corner () {
 
 
 ##
-## ## Tool / Gnome Console / Config
+## ## Tool / Gnome Console (kgx) / Config
 ##
 
 mod_tool_gnome_console_config () {
@@ -464,7 +464,16 @@ mod_tool_gnome_console_config () {
 mod_tool_gnome_console_config_for_preference () {
 
 
+	gsettings set org.gnome.Console use-system-font false
+
 	gsettings set org.gnome.Console custom-font 'Monospace 14'
+
+
+
+
+	gsettings set org.gnome.Console transparency true
+
+
 
 
 	return 0
