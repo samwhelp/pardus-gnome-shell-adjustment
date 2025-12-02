@@ -709,12 +709,61 @@ mod_tool_gnome_terminal_config_for_profile () {
 mod_tool_nautilus_config () {
 
 
+
+	##
+	## ## Default View Mode
+	##
+
 	gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 
 
 
 
+	##
+	## ## Show Hidden Files
+	##
+
+	gsettings set org.gnome.nautilus.preferences show-hidden-files true
+
 	gsettings set org.gtk.gtk4.Settings.FileChooser show-hidden true
+
+
+
+
+	##
+	## ## Show Hidden Files
+	##
+
+	#gsettings set org.gnome.nautilus.preferences click-policy 'single'
+
+	gsettings set org.gnome.nautilus.preferences click-policy 'double'
+
+
+
+
+	##
+	## ## Not Expandable Folders in ListView
+	##
+
+	gsettings set org.gnome.nautilus.list-view use-tree-view false
+
+	gsettings set org.gtk.Settings.FileChooser expand-folders false
+	gsettings set org.gtk.gtk4.Settings.FileChooser expand-folders false
+
+
+
+
+	##
+	## ## Sort Folders Before Files
+	##
+
+	gsettings set org.gtk.Settings.FileChooser sort-column 'name'
+	gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+	gsettings set org.gtk.Settings.FileChooser sort-order 'ascending'
+
+	gsettings set org.gtk.gtk4.Settings.FileChooser sort-column 'name'
+	gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+	gsettings set org.gtk.gtk4.Settings.FileChooser sort-order 'ascending'
 
 
 	return 0
